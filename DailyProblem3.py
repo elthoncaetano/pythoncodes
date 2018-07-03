@@ -8,18 +8,15 @@ For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should g
 You can modify the input array in-place.
 '''
 
-numbers = [1,2,7,4,5,3]
+numbers = [1,2,7,-4,5,3]
 score = len (numbers)
 for i in range(score):
     pos = 0
-    while pos < score and i + 1 != numbers[pos]:
+    while pos < score and i != numbers[pos]:
         print("i={} / pos={} / score={}" .format(i,pos,score))
         pos+=1
         input()
-    if pos >= score-1:
-            if pos == score-1:
-                print(i+2)
-            else:
-                print(i+1)
-            break
+    if pos > score or i == score-1:
+        print(i+1)
+        break
 
